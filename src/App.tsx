@@ -31,6 +31,8 @@ function App() {
       <h1>Loudness</h1>
       <div style={{ width: "60%", margin: "auto" }}>
         <Slider
+          min={1}
+          max={75}
           value={loudness}
           onChange={(_, val) => setLoudness(val as number)}
           aria-label="Default"
@@ -66,6 +68,7 @@ function App() {
       >
         {Object.keys(baseFrequencies).map((note) => (
           <FormControlLabel
+            key={note}
             value={note}
             control={<Radio />}
             label={
